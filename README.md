@@ -1,5 +1,7 @@
 # Data Retention - SQL Server and PostgreSQL
 
+Hi Joe!!!!
+
 There are two main folder:
  * postgres - Contains the scripts mentioned in the presentation to create and maintain table partitions in PostgreSQL
  * sql_server - Contains the maintenance scripts mentioned by Joe in the presentation for SQL Server.
