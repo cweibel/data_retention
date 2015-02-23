@@ -27,10 +27,10 @@ The first is 'FindSqlObject_view_Definition.sql' **<<Joe, what the heck is this 
 In the DBA_Data_Statistics folder there are additional scripts to get a peek at your databases:
  * create_job_DBA_Statistics.sql - database, files, latency, reads, writes and other physical statistics
  * create_proc_usp_DatabaseSizing_insert.sql - database files current and max sizes, available space, physical file name, inserts these values into tables created by the following queries:
-   * create_tbl_DB_Details.sql -
-   * create_tbl_DB_Statistics_DB_Size_Details.sql -
-   * create_tbl_DB_Statistics_DB_Size_Sum.sql -
-   * create_tbl_Server_Disk.sql -
+   * create_tbl_DB_Details.sql
+   * create_tbl_DB_Statistics_DB_Size_Details.sql
+   * create_tbl_DB_Statistics_DB_Size_Sum.sql
+   * create_tbl_Server_Disk.sql
    * create_tble_DB_Statistics_DB_Size_Detail.sql
 
 
