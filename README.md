@@ -6,8 +6,32 @@ There are two main folder:
 
 ## SQL Server
 
-(( Put more info here about the presentation))
+### Break/Fix
 
+There are two scripts in the 'Truncate_msdb_history' folder.  The first is purge_backup_jobhist_msdb.sql which accepts a datatime parameter, any information about backups before this date will be deleted from the MSBD database.  Use this script to triage (delete with prejudice) old information about backups.
+
+The second script is runcate_msdb_history.sql, this one can be scheduled to run weekly in SQL Agent and will keep the last two years worth of backup history.
+
+### Maintenance
+
+The 'IndexReorg - Daily.sql' file should be scheduled in SQL Agent to run daily.  It will automatically determine which indexes need to be rebuilt versus simply reorganized based on the average fragmentation levels.
+
+The 'cycle_error_logs.sql' file should be scheduled weekly in SQL Agent to rotate the SQL Server Error Logs which accumulate errors from various components of SQL Server such as the agent, database engine, and reporting services.
+
+### Discovery
+
+There are several scripts included which can gather information about your databases and instances.
+
+The first is 'FindSqlObject_view_Definition.sql' **<<Joe, what the heck is this one doing??...
+
+In the DBA_Data_Statistics folder there are additional scripts to get a peek at your databases:
+ * create_job_DBA_Statistics.sql - database, files, latency, reads, writes and other physical statistics
+ * create_proc_usp_DatabaseSizing_insert.sql - database files current and max sizes, available space, physical file name, inserts these values into tables created by the following queries:
+   * create_tbl_DB_Details.sql -
+   * create_tbl_DB_Statistics_DB_Size_Details.sql -
+   * create_tbl_DB_Statistics_DB_Size_Sum.sql -
+   * create_tbl_Server_Disk.sql -
+   * create_tble_DB_Statistics_DB_Size_Detail.sql
 
 
 ## PostgreSQL Table Partitioning
