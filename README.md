@@ -22,7 +22,7 @@ The 'cycle_error_logs.sql' file should be scheduled weekly in SQL Agent to rotat
 
 There are several scripts included which can gather information about your databases and instances.
 
-The first is 'FindSqlObject_view_Definition.sql' **<<Joe, what the heck is this one doing??...
+The first is 'FindSqlObject_view_Definition.sql' which will help you find where a database object is located, the examples in the script will help you discover where the object named 'sp_delete_backuphistory' is defined and what it's definition is.
 
 In the DBA_Data_Statistics folder there are additional scripts to get a peek at your databases:
  * create_job_DBA_Statistics.sql - database, files, latency, reads, writes and other physical statistics
