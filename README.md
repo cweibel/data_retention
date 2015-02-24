@@ -10,11 +10,11 @@ There are two main folder:
 
 There are two scripts in the 'Truncate_msdb_history' folder.  The first is purge_backup_jobhist_msdb.sql which accepts a datatime parameter, any information about backups before this date will be deleted from the MSBD database.  Use this script to triage (delete with prejudice) old information about backups.
 
-The second script is runcate_msdb_history.sql, this one can be scheduled to run weekly in SQL Agent and will keep the last two years worth of backup history.
+The second script is truncate_msdb_history.sql, this one can be scheduled to run weekly in SQL Agent and will keep the last two years worth of backup history.
 
 ### Maintenance
 
-The 'IndexReorg - Daily.sql' file should be scheduled in SQL Agent to run daily.  It will automatically determine which indexes need to be rebuilt versus simply reorganized based on the average fragmentation levels.
+The 'IndexReorg - Daily.sql' file should be scheduled in SQL Agent to run daily.  It will automatically determine which indexes need to be rebuilt versus simply reorganized based on the average fragmentation levels.  This also works for partitioned tables!
 
 The 'cycle_error_logs.sql' file should be scheduled weekly in SQL Agent to rotate the SQL Server Error Logs which accumulate errors from various components of SQL Server such as the agent, database engine, and reporting services.
 
